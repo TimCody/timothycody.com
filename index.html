@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Timothy Cody · Senior Staff Engineer &amp; Founder</title>
+<meta name="description" content="Senior staff engineer and founder of Built Correct. 13+ years building SaaS platforms, PostgreSQL on AWS, and practical AI for Bloomberg Tax, Walmart, fintech and small business.">
+<meta property="og:title" content="Timothy Cody · Senior Staff Engineer &amp; Founder">
+<meta property="og:description" content="I build the software businesses run on. SaaS architecture, PostgreSQL on AWS, practical AI.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://timothycody.com/">
+<meta property="og:image" content="https://timothycody.com/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#06080f">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080f; --bg2:#0b0f1a; --card:#0e1320; --line:rgba(148,163,184,.14);
+  --text:#eef2f9; --muted:#9aa6bb; --dim:#6b778c;
+  --a:#5b8cff; --b:#9b6bff; --c:#2ee6c5;
+  --grad:linear-gradient(120deg,#5b8cff 0%,#9b6bff 55%,#2ee6c5 120%);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:17px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace}
+
+/* backdrop */
+.glow{position:fixed;inset:0;pointer-events:none;z-index:-1;
+  background:
+   radial-gradient(900px 500px at 12% -5%,rgba(91,140,255,.18),transparent 60%),
+   radial-gradient(800px 500px at 95% 8%,rgba(155,107,255,.14),transparent 60%),
+   radial-gradient(700px 500px at 60% 110%,rgba(46,230,197,.07),transparent 60%);}
+.grid{position:absolute;inset:0;z-index:-1;opacity:.5;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:64px 64px;mask-image:radial-gradient(ellipse 70% 60% at 50% 0%,#000 20%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 0%,#000 20%,transparent 75%)}
+
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(6,8,15,.72);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-weight:800;letter-spacing:-.02em;font-size:18px;display:flex;align-items:center;gap:10px}
+.brand i{width:30px;height:30px;border-radius:9px;background:var(--grad);display:grid;place-items:center;font-style:normal;font-size:13px;font-weight:800;color:#06080f}
+.links{display:flex;gap:30px;align-items:center;font-size:14.5px;color:var(--muted)}
+.links a:hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:12px;font-weight:600;font-size:15px;border:1px solid var(--line);transition:.2s;cursor:pointer}
+.btn.primary{background:var(--grad);color:#06080f;border:0;box-shadow:0 8px 30px -8px rgba(91,140,255,.6)}
+.btn.primary:hover{transform:translateY(-2px);box-shadow:0 14px 36px -8px rgba(91,140,255,.75)}
+.btn.ghost{background:rgba(255,255,255,.03)}
+.btn.ghost:hover{background:rgba(255,255,255,.07);border-color:rgba(148,163,184,.35)}
+.btn.sm{padding:9px 16px;font-size:14px;border-radius:10px}
+
+/* hero */
+header.hero{position:relative;padding:150px 0 70px}
+.pill{display:inline-flex;align-items:center;gap:10px;padding:7px 14px 7px 12px;border:1px solid var(--line);border-radius:99px;font-size:13.5px;color:var(--muted);background:rgba(255,255,255,.03)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--c);box-shadow:0 0 0 0 rgba(46,230,197,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(46,230,197,0)}100%{box-shadow:0 0 0 0 rgba(46,230,197,0)}}
+h1{font-size:clamp(42px,7vw,84px);line-height:1.02;letter-spacing:-.045em;font-weight:800;margin:26px 0 22px;max-width:14ch}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:clamp(18px,2vw,22px);color:var(--muted);max-width:60ch;line-height:1.55}
+.lead b{color:var(--text);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:34px 0 0}
+.social{display:flex;gap:22px;margin-top:26px;font-size:14.5px;color:var(--dim);flex-wrap:wrap}
+.social a:hover{color:var(--text)}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-top:70px}
+.stat{background:var(--bg2);padding:28px 26px}
+.stat strong{display:block;font-size:clamp(34px,4vw,48px);letter-spacing:-.04em;font-weight:800;line-height:1}
+.stat span{display:block;margin-top:10px;font-size:14.5px;color:var(--muted);line-height:1.45}
+
+/* sections */
+section{padding:96px 0;position:relative}
+.eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--a);font-weight:700}
+h2{font-size:clamp(30px,4vw,48px);letter-spacing:-.035em;line-height:1.1;margin:14px 0 14px;font-weight:800}
+.sub{color:var(--muted);max-width:62ch;font-size:18px}
+
+/* work */
+.work{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:center;margin-top:84px}
+.work.flip{grid-template-columns:1.15fr 1fr}.work.flip .copy{order:2}
+.role{font-size:13.5px;color:var(--c);font-weight:600;letter-spacing:.02em}
+.work h3{font-size:clamp(26px,3vw,36px);letter-spacing:-.03em;line-height:1.15;margin:10px 0 14px;font-weight:800}
+.work p{color:var(--muted);margin-bottom:14px}
+.work p b{color:var(--text);font-weight:600}
+ul.ticks{list-style:none;margin:18px 0 20px}
+ul.ticks li{position:relative;padding-left:28px;margin-bottom:10px;color:#cfd7e6;font-size:16.5px}
+ul.ticks li::before{content:"✓";position:absolute;left:0;top:.1em;color:var(--c);font-weight:800;font-size:14px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.tags span{font-size:12.5px;padding:5px 11px;border-radius:99px;border:1px solid var(--line);color:var(--muted);background:rgba(255,255,255,.025)}
+.frame{border-radius:16px;border:1px solid rgba(148,163,184,.2);background:var(--card);overflow:hidden;box-shadow:0 40px 80px -30px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.02),0 0 120px -40px rgba(91,140,255,.35);transition:transform .4s}
+.frame:hover{transform:translateY(-6px)}
+.frame .bar{display:flex;gap:7px;align-items:center;padding:12px 14px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.02)}
+.frame .bar i{width:11px;height:11px;border-radius:50%;background:#2a3246}
+.frame .bar em{margin-left:10px;font-style:normal;font-size:12px;color:var(--dim);font-family:"JetBrains Mono",monospace;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.frame img{width:100%;height:auto}
+.frame.light{box-shadow:0 40px 80px -30px rgba(0,0,0,.8),0 0 120px -40px rgba(46,230,197,.3)}
+.caption{font-size:13px;color:var(--dim);margin-top:12px;text-align:center}
+
+.also{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:84px}
+.card{border:1px solid var(--line);border-radius:20px;padding:30px;background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.012));transition:.25s}
+.card:hover{border-color:rgba(91,140,255,.4);transform:translateY(-3px)}
+.card h3{font-size:22px;letter-spacing:-.02em;margin:8px 0 10px}
+.card p{color:var(--muted);font-size:16px}
+
+/* demos */
+.demos{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+.demo{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--card);transition:.3s;display:flex;flex-direction:column}
+.demo:hover{transform:translateY(-6px);border-color:rgba(91,140,255,.45);box-shadow:0 30px 60px -30px rgba(91,140,255,.4)}
+.demo .shot{aspect-ratio:16/10;overflow:hidden;border-bottom:1px solid var(--line);background:#111}
+.demo .shot img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .6s}
+.demo:hover .shot img{transform:scale(1.04)}
+.demo .body{padding:18px 20px 20px}
+.demo h4{font-size:17px;letter-spacing:-.01em;display:flex;justify-content:space-between;align-items:center}
+.demo h4 span{color:var(--a);font-size:15px;transition:.2s}
+.demo:hover h4 span{transform:translate(3px,-3px)}
+.demo p{font-size:14.5px;color:var(--muted);margin-top:4px}
+.more{margin-top:26px;color:var(--muted);font-size:15px}
+.more a{color:var(--a);font-weight:600}
+
+/* timeline */
+.tl{margin-top:44px;border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:190px 1fr;gap:30px;padding:26px 0;border-bottom:1px solid var(--line)}
+.row .when{color:var(--dim);font-size:14.5px;font-family:"JetBrains Mono",monospace}
+.row h4{font-size:19px;letter-spacing:-.015em}
+.row h4 small{font-size:15px;font-weight:500;color:var(--muted)}
+.row p{color:var(--muted);margin-top:6px;font-size:16px;max-width:70ch}
+
+/* how + stack */
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+.cols .card h3{font-size:19px}
+.stack{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:44px}
+.stack .card h3{font-size:15px;color:var(--a);text-transform:uppercase;letter-spacing:.1em;margin:0 0 14px}
+.chips{display:flex;flex-wrap:wrap;gap:9px}
+.chips span{padding:8px 14px;border-radius:10px;background:rgba(255,255,255,.04);border:1px solid var(--line);font-size:14.5px;color:#d5dcea}
+
+/* contact */
+.contact{text-align:center;padding:110px 0 90px}
+.box{border:1px solid var(--line);border-radius:28px;padding:72px 28px;background:
+  radial-gradient(600px 300px at 50% 0%,rgba(91,140,255,.18),transparent 70%),linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01))}
+.box h2{margin:0 auto 14px;max-width:18ch}
+.box .sub{margin:0 auto}
+.box .cta{justify-content:center}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--dim);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+footer a:hover{color:var(--text)}
+
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.dot{animation:none}html{scroll-behavior:auto}}
+
+@media (max-width:920px){
+  .links a:not(.btn){display:none}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .work,.work.flip{grid-template-columns:1fr;gap:34px;margin-top:64px}.work.flip .copy{order:0}
+  .also,.cols,.stack{grid-template-columns:1fr}
+  .demos{grid-template-columns:repeat(2,1fr)}
+  .row{grid-template-columns:1fr;gap:6px}
+  header.hero{padding-top:120px}
+  section{padding:70px 0}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .wrap{padding:0 20px}
+  .demos{grid-template-columns:1fr}
+  .stat{padding:22px 18px}
+  .btn{padding:12px 18px}
+  .box{padding:52px 20px}
+}
+</style>
+</head>
+<body>
+<div class="glow"></div>
+
+<nav>
+  <div class="wrap nav">
+    <a class="brand" href="#top"><i>TC</i>Timothy Cody</a>
+    <div class="links">
+      <a href="#work">Work</a>
+      <a href="#demos">Built Correct</a>
+      <a href="#experience">Experience</a>
+      <a href="#approach">Approach</a>
+      <a class="btn primary sm" href="#contact">Let’s talk</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="grid"></div>
+  <div class="wrap">
+    <span class="pill"><span class="dot"></span>Open to senior &amp; staff roles and select contracts</span>
+    <h1>I build the software <span class="grad">businesses run on.</span></h1>
+    <p class="lead">Senior staff engineer and founder of <b>Built Correct</b>. For 13+ years I’ve turned messy workflows into reliable products across <b>Bloomberg Tax</b>, <b>Walmart</b>, fintech and small business: SaaS architecture, PostgreSQL on AWS, and practical AI that does real work.</p>
+    <div class="cta">
+      <a class="btn primary" href="https://www.upwork.com/freelancers/timothybcody" target="_blank" rel="noopener">Hire me on Upwork →</a>
+      <a class="btn ghost" href="assets/Timothy-Cody-Resume.pdf">Download résumé</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/timothy-b-cody" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn ghost" href="https://github.com/TimCody" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div class="social"><span>📍 New Jersey · Eastern time · Remote</span><span>⚡ Replies within a day</span></div>
+
+    <div class="stats reveal">
+      <div class="stat"><strong data-count="13" data-suffix="+">13+</strong><span>years shipping production software</span></div>
+      <div class="stat"><strong data-count="1" data-suffix="M+">1M+</strong><span>users on the trading app I helped build</span></div>
+      <div class="stat"><strong>100s</strong><span>of enterprise customers on the platform I re-architected</span></div>
+      <div class="stat"><strong data-count="40">40</strong><span>engineers voted for my architecture over the alternatives</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">Selected work</div>
+      <h2>Products people depend on</h2>
+      <p class="sub">A few of the systems I’ve designed and shipped. Most of my work lives in private repositories, so this is the short tour.</p>
+    </div>
+
+    <!-- Bloomberg Tax -->
+    <article class="work reveal">
+      <div class="copy">
+        <div class="role">Senior Staff Web Application Architect · Bloomberg Tax · 2021–2026</div>
+        <h3>Workpapers: from buggy MVP to enterprise product</h3>
+        <p>Workpapers lets accountants build their own data-transformation workflows visually, snapping together blocks to clean, compare and reconcile financial data without writing code.</p>
+        <p>I inherited a <b>revenue-blocked, bug-ridden pre-sales MVP</b>. The fix was a full re-architecture, an unpopular call at the time. I made the case, <b>won a 40-engineer vote</b> against competing proposals, and led the rebuild.</p>
+        <ul class="ticks">
+          <li>Rebuilt on <b>serverless Aurora PostgreSQL</b>, Node.js and AWS</li>
+          <li>Grew the product to <b>hundreds of enterprise customers</b></li>
+          <li>Worked across architecture, data modeling and AI integration</li>
+        </ul>
+        <div class="tags"><span>Node.js</span><span>TypeScript</span><span>React</span><span>PostgreSQL</span><span>AWS Serverless</span><span>C#</span><span>Python</span></div>
+      </div>
+      <div>
+        <div class="frame"><div class="bar"><i></i><i></i><i></i><em>Bloomberg Tax Workpapers</em></div><img src="assets/workpapers.png" alt="Bloomberg Tax Workpapers visual workflow builder" loading="lazy"></div>
+        <div class="caption">The visual workflow builder, sample data</div>
+      </div>
+    </article>
+
+    <!-- Built Correct -->
+    <article class="work flip reveal" id="builtcorrect">
+      <div class="copy">
+        <div class="role">Founder &amp; principal engineer · Built Correct · 2024–present</div>
+        <h3>Custom software for real businesses</h3>
+        <p><b>Built Correct</b> delivers customized business applications from a reusable foundation, so each customer gets software shaped around how they actually work, at startup speed and with senior engineering behind it.</p>
+        <ul class="ticks">
+          <li><b>Multi-tenant SaaS:</b> every customer has its own app, data and rules</li>
+          <li>Web, <b>iOS and Android</b> from one codebase, with offline support where it matters</li>
+          <li><b>Build Room:</b> describe your business app and watch a first version appear on its own link in about two minutes</li>
+          <li>Production <b>RAG and agentic pipelines</b> that process large architectural documents at roughly 99% accuracy</li>
+        </ul>
+        <div class="tags"><span>TypeScript</span><span>Node.js</span><span>PostgreSQL</span><span>AWS Serverless</span><span>Python</span><span>Capacitor</span><span>RAG / agents</span></div>
+        <div class="cta" style="margin-top:26px"><a class="btn ghost sm" href="https://builtcorrect.com" target="_blank" rel="noopener">Visit builtcorrect.com →</a></div>
+      </div>
+      <div>
+        <div class="frame"><div class="bar"><i></i><i></i><i></i><em>modern-roofing.builtcorrect.com</em></div><img src="assets/demos/modern-roofing.jpg" alt="Roofing operations platform demo" loading="lazy"></div>
+        <div class="caption">A live industry demo (fictional data), see more below</div>
+      </div>
+    </article>
+
+    <!-- Vestly -->
+    <article class="work reveal">
+      <div class="copy">
+        <div class="role">Senior Software Engineer · Intelligration / CWF Managers · 2015–2020</div>
+        <h3>Vestly: a trading game with a million players</h3>
+        <p>Vestly let anyone pick stocks with virtual money and win real cash prizes. It started as an MVP and grew to <b>over a million users</b> on iOS and Android, while the same data fed a hedge fund’s research.</p>
+        <ul class="ticks">
+          <li>Backend <b>Node API</b> serving the mobile apps, hosted serverlessly on AWS</li>
+          <li>A <b>trading engine</b> built to handle thinly traded penny stocks</li>
+          <li><b>Redis caching</b>, scheduled ETL jobs and an admin portal</li>
+          <li>Worked with the data science team to turn data into <b>signals the fund traded on</b></li>
+        </ul>
+        <div class="tags"><span>Node.js</span><span>MySQL</span><span>Redis</span><span>AWS</span><span>Go</span><span>Vue</span><span>Terraform</span><span>Ansible</span></div>
+      </div>
+      <div>
+        <div class="frame"><div class="bar"><i></i><i></i><i></i><em>Vestly · iOS &amp; Android</em></div><img src="assets/vestly.jpg" alt="Vestly mobile app: buy stocks and portfolio screens" loading="lazy"></div>
+        <div class="caption">The Vestly app: choose stocks, climb the leaderboard</div>
+      </div>
+    </article>
+
+    <div class="also">
+      <div class="card reveal">
+        <div class="role">Senior Software Engineer · Walmart Global Tech · 2021–2022</div>
+        <h3>EBT payments on walmart.com</h3>
+        <p>Helped build the online checkout flow that lets customers pay with EBT cards, working in GraphQL services on one of the busiest e-commerce sites in the world.</p>
+      </div>
+      <div class="card reveal">
+        <div class="role">Lead Software Engineer · SMART Carpet &amp; Flooring · 2013–2015</div>
+        <h3>The system that ran a business</h3>
+        <p>Modernized a huge custom application that ran a 50-person, six-location company: PHP to Node and modern front ends. I hired and led the team, and what we built is still in production today.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="demos" style="background:linear-gradient(180deg,transparent,rgba(255,255,255,.02) 20%,rgba(255,255,255,.02) 80%,transparent)">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">Built Correct · live demos</div>
+      <h2>Real applications you can click through</h2>
+      <p class="sub">Each is a full working app on its own address, running on fictional data. Same foundation, different businesses.</p>
+    </div>
+    <div class="demos">
+      <a class="demo reveal" href="https://large-flooring-company.builtcorrect.com" target="_blank" rel="noopener"><div class="shot"><img src="assets/demos/large-flooring-company.jpg" alt="" loading="lazy"></div><div class="body"><h4>Flooring company <span>↗</span></h4><p>Leads to estimates, dispatch, work orders and crews.</p></div></a>
+      <a class="demo reveal" href="https://modern-roofing.builtcorrect.com" target="_blank" rel="noopener"><div class="shot"><img src="assets/demos/modern-roofing.jpg" alt="" loading="lazy"></div><div class="body"><h4>Storm roofing <span>↗</span></h4><p>Claims pipeline, field work and production across offices.</p></div></a>
+      <a class="demo reveal" href="https://resort-cleaning.builtcorrect.com" target="_blank" rel="noopener"><div class="shot"><img src="assets/demos/resort-cleaning.jpg" alt="" loading="lazy"></div><div class="body"><h4>Resort cleaning <span>↗</span></h4><p>Turnovers, staffing, linens and payroll by role.</p></div></a>
+      <a class="demo reveal" href="https://shorepoint.builtcorrect.com" target="_blank" rel="noopener"><div class="shot"><img src="assets/demos/shorepoint.jpg" alt="" loading="lazy"></div><div class="body"><h4>CountPilot <span>↗</span></h4><p>Route-based inventory counts and order drafting for field reps.</p></div></a>
+      <a class="demo reveal" href="https://makeup-app.builtcorrect.com" target="_blank" rel="noopener"><div class="shot"><img src="assets/demos/makeup-app.jpg" alt="" loading="lazy"></div><div class="body"><h4>Makeup studio <span>↗</span></h4><p>Bookings, clients, weddings, contracts and a gallery.</p></div></a>
+      <a class="demo reveal" href="https://dentist-office.builtcorrect.com" target="_blank" rel="noopener"><div class="shot"><img src="assets/demos/dentist-office.jpg" alt="" loading="lazy"></div><div class="body"><h4>Dental practice <span>↗</span></h4><p>Appointment book, patients and requests at a glance.</p></div></a>
+    </div>
+    <p class="more reveal">Also live: <a href="https://construction-management.builtcorrect.com" target="_blank" rel="noopener">construction management</a>, <a href="https://electrical-contractor.builtcorrect.com" target="_blank" rel="noopener">electrical contractor</a>, <a href="https://solo-contractor.builtcorrect.com" target="_blank" rel="noopener">solo contractor</a> and <a href="https://pharmacy-consulting.builtcorrect.com" target="_blank" rel="noopener">pharmacy consulting</a>.</p>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">Experience</div>
+      <h2>Thirteen years, start to finish</h2>
+    </div>
+    <div class="tl reveal">
+      <div class="row"><div class="when">2024 – now</div><div><h4>Founder &amp; Principal Engineer <small>· Built Correct</small></h4><p>Custom SaaS, business applications, customer portals and practical AI for paying customers, from first conversation through launch and ongoing improvement.</p></div></div>
+      <div class="row"><div class="when">2021 – 2026</div><div><h4>Senior Staff Web Application Architect <small>· Bloomberg Tax</small></h4><p>Led the architecture and rebuild of an early SaaS product into a platform serving hundreds of enterprise customers.</p></div></div>
+      <div class="row"><div class="when">2021 – 2022</div><div><h4>Senior Software Engineer <small>· Walmart Global Tech</small></h4><p>EBT card payments for walmart.com checkout.</p></div></div>
+      <div class="row"><div class="when">2015 – 2020</div><div><h4>Senior Software Engineer <small>· Intelligration / CWF Managers</small></h4><p>Built the MVP and backend of a fantasy stock-trading app that reached a million users, plus the ingestion pipelines behind a hedge fund’s research.</p></div></div>
+      <div class="row"><div class="when">2013 – 2015</div><div><h4>Lead Software Engineer <small>· SMART Carpet &amp; Flooring</small></h4><p>Modernized the custom platform that ran the whole business, led a small team, and handled IT for 50 employees across six locations.</p></div></div>
+      <div class="row"><div class="when">2011 – 2012</div><div><h4>Owner &amp; President <small>· Drive Alive, LLC</small></h4><p>The business that started my career and taught me to ship against real deadlines.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="approach" style="background:linear-gradient(180deg,transparent,rgba(255,255,255,.02) 20%,rgba(255,255,255,.02) 80%,transparent)">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">Approach</div>
+      <h2>Simple on purpose, correct before clever</h2>
+      <p class="sub">Self-taught means I never learned to say “that’s not how it’s done.” I build systems that work, that last, and that other engineers want to maintain.</p>
+    </div>
+    <div class="cols">
+      <div class="card reveal"><h3>Traceable code</h3><p>Plain request paths and explicit SQL. A teammate can follow any button to its handler, query and stored field without a guided tour.</p></div>
+      <div class="card reveal"><h3>Care where it counts</h3><p>Money, permissions and tenant boundaries get the most scrutiny. Every change is used for real before I call it done.</p></div>
+      <div class="card reveal"><h3>Senior ownership</h3><p>I ask the uncomfortable question in the design review, take ownership when things break, and explain the tradeoffs to a CFO as easily as an engineer.</p></div>
+    </div>
+    <div class="stack">
+      <div class="card reveal"><h3>Core stack</h3><div class="chips"><span>Node.js</span><span>TypeScript</span><span>PostgreSQL</span><span>Aurora Serverless</span><span>AWS Lambda</span><span>React</span><span>Python</span><span>GraphQL</span><span>Redis</span><span>Tailwind</span><span>Capacitor</span></div></div>
+      <div class="card reveal"><h3>Strengths</h3><div class="chips"><span>SaaS architecture</span><span>Multi-tenant data design</span><span>Database performance</span><span>LLM integrations</span><span>RAG &amp; agents</span><span>Rescuing stalled products</span><span>Mentoring &amp; hiring</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="box reveal">
+      <div class="eyebrow">Let’s talk</div>
+      <h2>Have something worth building?</h2>
+      <p class="sub">New products, stalled projects, AI features for existing software, or a senior engineer to join your team. Tell me what’s getting in the way and what a useful first version looks like.</p>
+      <div class="cta">
+        <a class="btn primary" href="https://www.upwork.com/freelancers/timothybcody" target="_blank" rel="noopener">Message me on Upwork →</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/timothy-b-cody" target="_blank" rel="noopener">Connect on LinkedIn</a>
+        <a class="btn ghost" href="mailto:timothybcody@gmail.com">Email</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> Timothy Cody</span>
+    <span><a href="https://builtcorrect.com">Built Correct</a> · <a href="https://github.com/TimCody">GitHub</a> · <a href="https://www.linkedin.com/in/timothy-b-cody">LinkedIn</a> · <a href="assets/Timothy-Cody-Resume.pdf">Résumé</a></span>
+  </div>
+</footer>
+
+<script>
+// scroll reveal
+(function () {
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, { threshold: 0.12 });
+  els.forEach(function (e) { io.observe(e); });
+  // safety net: never leave content hidden
+  setTimeout(function () { els.forEach(function (e) { e.classList.add('in'); }); }, 4000);
+})();
+document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
