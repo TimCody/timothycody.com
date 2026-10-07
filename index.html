@@ -82,6 +82,9 @@ h2{font-size:clamp(30px,4vw,48px);letter-spacing:-.035em;line-height:1.1;margin:
 /* work */
 .work{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:center;margin-top:84px}
 .work.flip{grid-template-columns:1.15fr 1fr}.work.flip .copy{order:2}
+.work>*,.split>*{min-width:0}
+.work.wide{grid-template-columns:1fr;gap:40px}
+.split{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:end}
 .role{font-size:13.5px;color:var(--c);font-weight:600;letter-spacing:.02em}
 .work h3{font-size:clamp(26px,3vw,36px);letter-spacing:-.03em;line-height:1.15;margin:10px 0 14px;font-weight:800}
 .work p{color:var(--muted);margin-bottom:14px}
@@ -156,7 +159,8 @@ footer a:hover{color:var(--text)}
   .links a:not(.btn){display:none}
   .stats{grid-template-columns:repeat(2,1fr)}
   .work,.work.flip{grid-template-columns:1fr;gap:34px;margin-top:64px}.work.flip .copy{order:0}
-  .also,.cols,.stack{grid-template-columns:1fr}
+  .also,.cols,.stack,.split{grid-template-columns:1fr}
+  .split{gap:0}
   .demos{grid-template-columns:repeat(2,1fr)}
   .row{grid-template-columns:1fr;gap:6px}
   header.hero{padding-top:120px}
@@ -166,6 +170,9 @@ footer a:hover{color:var(--text)}
   body{font-size:16px}
   .wrap{padding:0 20px}
   .demos{grid-template-columns:1fr}
+  .frame.pan{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .frame.pan img{min-width:820px}
+  .frame:hover{transform:none}
   .stat{padding:22px 18px}
   .btn{padding:12px 18px}
   .box{padding:52px 20px}
@@ -220,21 +227,25 @@ footer a:hover{color:var(--text)}
     </div>
 
     <!-- Bloomberg Tax -->
-    <article class="work reveal">
-      <div class="copy">
-        <div class="role">Senior Staff Web Application Architect · Bloomberg Tax · 2021–2026</div>
-        <h3>Workpapers: from buggy MVP to enterprise product</h3>
-        <p>Workpapers lets accountants build their own data-transformation workflows visually, snapping together blocks to clean, compare and reconcile financial data without writing code.</p>
-        <p>I inherited a <b>revenue-blocked, bug-ridden pre-sales MVP</b>. The fix was a full re-architecture, an unpopular call at the time. I made the case, <b>won a 40-engineer vote</b> against competing proposals, and led the rebuild.</p>
-        <ul class="ticks">
-          <li>Rebuilt on <b>serverless Aurora PostgreSQL</b>, Node.js and AWS</li>
-          <li>Grew the product to <b>hundreds of enterprise customers</b></li>
-          <li>Worked across architecture, data modeling and AI integration</li>
-        </ul>
-        <div class="tags"><span>Node.js</span><span>TypeScript</span><span>React</span><span>PostgreSQL</span><span>AWS Serverless</span><span>C#</span><span>Python</span></div>
+    <article class="work wide reveal">
+      <div class="copy split">
+        <div>
+          <div class="role">Senior Staff Web Application Architect · Bloomberg Tax · 2021–2026</div>
+          <h3>Workpapers: from buggy MVP to enterprise product</h3>
+          <p>Workpapers lets accountants build their own data-transformation workflows visually, snapping together blocks to clean, compare and reconcile financial data without writing code.</p>
+          <p>I inherited a <b>revenue-blocked, bug-ridden pre-sales MVP</b>. The fix was a full re-architecture, an unpopular call at the time. I made the case, <b>won a 40-engineer vote</b> against competing proposals, and led the rebuild.</p>
+        </div>
+        <div>
+          <ul class="ticks">
+            <li>Rebuilt on <b>serverless Aurora PostgreSQL</b>, Node.js and AWS</li>
+            <li>Grew the product to <b>hundreds of enterprise customers</b></li>
+            <li>Worked across architecture, data modeling and AI integration</li>
+          </ul>
+          <div class="tags"><span>Node.js</span><span>TypeScript</span><span>React</span><span>PostgreSQL</span><span>AWS Serverless</span><span>C#</span><span>Python</span></div>
+        </div>
       </div>
       <div>
-        <div class="frame"><div class="bar"><i></i><i></i><i></i><em>Bloomberg Tax Workpapers</em></div><img src="assets/workpapers.png" alt="Bloomberg Tax Workpapers visual workflow builder" loading="lazy"></div>
+        <div class="frame pan"><div class="bar"><i></i><i></i><i></i><em>Bloomberg Tax Workpapers</em></div><img src="assets/workpapers.png" alt="Bloomberg Tax Workpapers visual workflow builder" loading="lazy"></div>
         <div class="caption">The visual workflow builder, sample data</div>
       </div>
     </article>
